@@ -66,6 +66,18 @@ const StyledButton = styled.div`
     }
 `;
 
+const StyledBottomImg = styled.div`
+    width: 250px;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 13px;
+    max-width: 100%;
+
+    img {
+        max-width: 100%;
+    }
+`;
+
 class PrimeDropDown extends Component {
 
 	render() {
@@ -86,8 +98,10 @@ class PrimeDropDown extends Component {
                         Try Prime
                     </button>
                 </StyledButton>
+                <StyledBottomImg>
+                    <img src="https://m.media-amazon.com/images/G/01/marketing/prime/JoyDelivered/Prime-Gateway-Flyout-Non-Member-Ph1-Multi-illustration-1000x1258_v2._CB437406087_.png"  alt="" />
+                </StyledBottomImg>
 			</StyledDropDownContent>
-
 		);
 	}
 }
