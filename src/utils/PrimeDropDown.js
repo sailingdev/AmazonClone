@@ -29,6 +29,17 @@ const StyledCopy = styled.div`
     font-weight: 700;
 `;
 
+const StyledSubhead = styled.div`
+    color: #FFF4E0;
+    font-size: 14px;
+    line-height: 16px;
+    width: 275px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10px;
+    font-family: Amazon Ember, sans-serif;
+`;
+
 class PrimeDropDown extends Component {
 
 	render() {
@@ -41,6 +52,9 @@ class PrimeDropDown extends Component {
                     <p>Music.</p>
                     <p>Movies. Munchies.</p>
                 </StyledCopy>
+                <StyledSubhead>
+                    Shopping and entertainment all in one place.
+                </StyledSubhead>
 			</StyledDropDownContent>
 
 		);
