@@ -13,15 +13,24 @@ const StyledProductsContent = styled.div`
     padding: 20px 0;
 `;
 
+const StyledRow = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+`;
+
 class Products extends Component {
 
 	render() {
 		return (
 			<StyledProducts>
 				<StyledProductsContent>
-                    <div>
+                    <StyledRow>
                         <ProductItem />
-                    </div>
+                        <ProductItem />
+                        <ProductItem />
+                        <ProductItem />
+                    </StyledRow>
                 </StyledProductsContent>
 			</StyledProducts>
 

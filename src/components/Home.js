@@ -89,8 +89,8 @@ class Home extends Component {
 							<img key={key} src={imgItem.src} alt={imgItem.alt} />
 						))}
 					</StyledSlider>
-                    <Products />
                 </StyledHome>
+                <Products />
 			</div>
 
 		);
