@@ -23,6 +23,19 @@ const StyledSideBarContent = styled.div`
     will-change: transform;
 `;
 
+const StyledSideBarHeader = styled.div`
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    background-color: #232f3e;
+    span {
+        margin-left: 5px;
+    }
+`;
+
 class SideBar extends Component {
 
 	render() {
@@ -30,7 +43,10 @@ class SideBar extends Component {
 			<div>
 				<StyledSideBar>
                     <StyledSideBarContent>
-                        menu
+                        <StyledSideBarHeader>
+                            <FaceIcon />
+                            <span>Hello, Sign in</span>
+                        </StyledSideBarHeader>
                     </StyledSideBarContent>
                 </StyledSideBar>
 			</div>
