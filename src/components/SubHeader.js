@@ -37,13 +37,28 @@ const StyleSubLabel = styled.div`
     }
 `;
 
+const SideNavMenu = styled.div`
+    display: flex;
+    align-item: center;
+    cursor: pointer;
+    
+    span {
+        margin-left: 2px;
+    }
+`;
+
 class SubHeader extends Component {
 
 	render() {
 		return (
 			<StyledSubHeader>
                 <StyleSubLabel>
-
+                    <SideNavMenu
+                        onClick={this.props.handleClick}
+                    >
+                        <DehazeIcon />
+                        <span>All</span>
+                    </SideNavMenu>
                     <div>
                         <a href="/">Customer Service</a>
                     </div>
