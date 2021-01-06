@@ -196,7 +196,7 @@ class Header extends Component {
 		return (
 			<div>
                 <SideBar 
-                    menuStatus="close"
+                    menuStatus={this.state.menuStatus}
                 />
 				<StyledHeader>
                     <a href="/">
@@ -244,7 +244,9 @@ class Header extends Component {
 						</StyledOptionBasket>
 					</StyledHeaderNav>
                 </StyledHeader>
-                <SubHeader />
+                <SubHeader 
+                    handleClick={this.handleClick}
+                />
 			</div>
 
 		);
