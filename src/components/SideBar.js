@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import FaceIcon from '@material-ui/icons/Face';
+import CloseIcon from '@material-ui/icons/Close';
 
 const StyledSideBar = styled.div`
     position: fixed;
@@ -44,6 +45,14 @@ const StyledSubMenuItem = styled.ul`
     }
 `;
 
+const StyledCloseIcon = styled(CloseIcon)`
+    position: absolute;
+    top: 10px;
+    left: 360px;
+    color: white;
+    cursor: pointer;
+`;
+
 class SideBar extends Component {
 
 	render() {
@@ -63,6 +72,7 @@ class SideBar extends Component {
                             <li>Help & Settings</li>
                         </StyledSubMenuItem>
                     </StyledSideBarContent>
+                    <StyledCloseIcon/>
                 </StyledSideBar>
 			</div>
 
