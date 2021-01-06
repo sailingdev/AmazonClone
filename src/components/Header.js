@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import SearchIcon from "@material-ui/icons/Search";
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 const StyledHeader = styled.div`
   	height: 60px;
@@ -110,6 +111,25 @@ const StyledSearchIcon = styled(SearchIcon)`
 	background-color: #cd9042;
 `;
 
+const StyledHeaderNav = styled.div`
+	display: flex;
+	justify-content: space-evenly;
+`;
+
+const StyleDropDown = styled.div`
+	top: 40px;
+    position: absolute;
+    color: black;
+    right: -135px;
+    background: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.13);
+    list-style-type: none;
+    text-align: center;
+	padding: 20px;
+	z-index:3;
+	display: none;
+`;
+
 class Header extends Component {
 
 	render() {
@@ -140,6 +160,18 @@ class Header extends Component {
 						<StyledSearchInput type="text" />
 						<StyledSearchIcon />
 					</StyledHeaderSearch>
+                    <StyledHeaderNav>
+						<StyledOption>
+							<StyledOptionLineOne>Hello, sign in</StyledOptionLineOne>
+							<StyledOptionLineTwo>
+								Account & Lists
+								<ArrowDropDownIcon fontSize="small" />
+							</StyledOptionLineTwo>
+								<StyleDropDown>
+									Menu
+								</StyleDropDown>
+						</StyledOption>
+					</StyledHeaderNav>
                 </StyledHeader>
 			</div>
 
