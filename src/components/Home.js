@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import Slider from 'react-slick';
 
 const StyledHome = styled.div`
 	display: flex;
@@ -31,10 +34,23 @@ class Home extends Component {
     };
 
 	render() {
+        const settings = {
+			dots: false,
+			infinite: true,
+			speed: 500,
+			slidesToShow: 1,
+			autoplay: true,
+			autoplaySpeed: 2000,
+			slidesToScroll: 1
+		};
 		return (
 			<div>
 				<StyledHome>
-                    Home
+                    <Slider {...settings}>
+						{this.state.items.map((imgItem, key) => (
+							<img key={key} src={imgItem.src} alt={imgItem.alt} />
+						))}
+					</Slider>
                 </StyledHome>
 			</div>
 
