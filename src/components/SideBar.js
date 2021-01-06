@@ -36,6 +36,14 @@ const StyledSideBarHeader = styled.div`
     }
 `;
 
+const StyledSubMenuItem = styled.ul`
+    li {
+        padding: 10px 20px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+`;
+
 class SideBar extends Component {
 
 	render() {
@@ -47,6 +55,13 @@ class SideBar extends Component {
                             <FaceIcon />
                             <span>Hello, Sign in</span>
                         </StyledSideBarHeader>
+                        <StyledSubMenuItem>
+                            <li>Trending</li>
+                            <li>Digital Content & Devices</li>
+                            <li>Shop By Department</li>
+                            <li>Programs & Features</li>
+                            <li>Help & Settings</li>
+                        </StyledSubMenuItem>
                     </StyledSideBarContent>
                 </StyledSideBar>
 			</div>
