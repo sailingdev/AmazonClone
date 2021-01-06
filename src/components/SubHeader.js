@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import PrimeDropDown from '../utils/PrimeDropDown.js';
 
 const StyledSubHeader = styled.div`
   	height: 40px;
@@ -97,7 +98,7 @@ class SubHeader extends Component {
                             <span>Prime</span>
                             <ArrowDropDownIcon fontSize="small" />
                             <StyleDropDown>
-                                Dropdown menu
+                                <PrimeDropDown />
                             </StyleDropDown>
                         </StyledPrime>
                     </div>
