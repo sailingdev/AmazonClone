@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import DehazeIcon from '@material-ui/icons/Dehaze';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 const StyledSubHeader = styled.div`
   	height: 40px;
