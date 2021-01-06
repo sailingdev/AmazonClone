@@ -48,6 +48,35 @@ const SideNavMenu = styled.div`
     }
 `;
 
+const StyledPrime = styled.a`
+    display: flex;
+    align-items: center;
+    margin-top: -3px;
+    &:hover {
+        div {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+    }
+`;
+
+const StyleDropDown = styled.div`
+    top: 35px;
+    left: 100px;
+    position: absolute;
+    color: black;
+    background: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.13);
+    list-style-type: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+	z-index:3;
+    display: none;
+    width: 310px;
+    max-width: 100%;
+`;
+
 class SubHeader extends Component {
 
 	render() {
@@ -60,6 +89,18 @@ class SubHeader extends Component {
                         <DehazeIcon />
                         <span>All</span>
                     </SideNavMenu>
+                    <div>
+                        <a href="/">Best Sellers</a>
+                    </div>
+                    <div>
+                        <StyledPrime href="/">
+                            <span>Prime</span>
+                            <ArrowDropDownIcon fontSize="small" />
+                            <StyleDropDown>
+                                Dropdown menu
+                            </StyleDropDown>
+                        </StyledPrime>
+                    </div>
                     <div>
                         <a href="/">Customer Service</a>
                     </div>
