@@ -73,7 +73,9 @@ class SideBar extends Component {
                                 <li>Help & Settings</li>
                             </StyledSubMenuItem>
                         </StyledSideBarContent>
-                        <StyledCloseIcon/>
+                        <StyledCloseIcon
+                            onClick={this.props.handleClick}
+                        />
                     </StyledSideBar>
                 }
 			</div>

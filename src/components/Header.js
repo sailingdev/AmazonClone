@@ -197,6 +197,7 @@ class Header extends Component {
 			<div>
                 <SideBar 
                     menuStatus={this.state.menuStatus}
+                    handleClick={this.handleClick}
                 />
 				<StyledHeader>
                     <a href="/">
