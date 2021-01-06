@@ -167,7 +167,9 @@ class Header extends Component {
 	render() {
 		return (
 			<div>
-                <SideBar />
+                <SideBar 
+                    menuStatus="close"
+                />
 				<StyledHeader>
                     <a href="/">
 						<StyledLogo 

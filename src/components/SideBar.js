@@ -58,22 +58,24 @@ class SideBar extends Component {
 	render() {
 		return (
 			<div>
-				<StyledSideBar>
-                    <StyledSideBarContent>
-                        <StyledSideBarHeader>
-                            <FaceIcon />
-                            <span>Hello, Sign in</span>
-                        </StyledSideBarHeader>
-                        <StyledSubMenuItem>
-                            <li>Trending</li>
-                            <li>Digital Content & Devices</li>
-                            <li>Shop By Department</li>
-                            <li>Programs & Features</li>
-                            <li>Help & Settings</li>
-                        </StyledSubMenuItem>
-                    </StyledSideBarContent>
-                    <StyledCloseIcon/>
-                </StyledSideBar>
+                { this.props.menuStatus === "open" && 
+                    <StyledSideBar>
+                        <StyledSideBarContent>
+                            <StyledSideBarHeader>
+                                <FaceIcon />
+                                <span>Hello, Sign in</span>
+                            </StyledSideBarHeader>
+                            <StyledSubMenuItem>
+                                <li>Trending</li>
+                                <li>Digital Content & Devices</li>
+                                <li>Shop By Department</li>
+                                <li>Programs & Features</li>
+                                <li>Help & Settings</li>
+                            </StyledSubMenuItem>
+                        </StyledSideBarContent>
+                        <StyledCloseIcon/>
+                    </StyledSideBar>
+                }
 			</div>
 
 		);
