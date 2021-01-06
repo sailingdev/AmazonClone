@@ -4,6 +4,7 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import SearchIcon from "@material-ui/icons/Search";
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import AccountListDropDown from '../utils/AccountListDropDown.js';
 
 const StyledHeader = styled.div`
   	height: 60px;
@@ -41,28 +42,6 @@ const StyledLocation = styled.div`
 			padding: none;
 		}
 	}
-	@media (max-width: 768px) {
-		display: none;
-	}
-`;
-
-const StyledOption = styled.div`
-	display: flex;
-	flex-direction: column;
-	margin-left: 10px;
-	margin-right: 10px;
-	color: white;
-	position: relative;
-	padding: 4px 8px 4px 6px;
-
-	&:hover {
-		cursor: pointer;
-		border: 1px solid;
-		border-radius: 2px;
-		outline: 0;
-		padding: 3px 7px 3px 5px;
-	}
-
 	@media (max-width: 768px) {
 		display: none;
 	}
@@ -131,6 +110,35 @@ const StyleDropDown = styled.div`
 	display: none;
 `;
 
+const StyledOption = styled.div`
+	display: flex;
+	flex-direction: column;
+	margin-left: 10px;
+	margin-right: 10px;
+	color: white;
+	position: relative;
+	padding: 4px 8px 4px 6px;
+
+	&:hover {
+		cursor: pointer;
+		border: 1px solid;
+		border-radius: 2px;
+		outline: 0;
+        padding: 3px 7px 3px 5px;
+        
+        ${StyleDropDown} {
+			display: block;
+			animation: fadeIn 0.5s;
+		}
+
+    }
+    
+
+	@media (max-width: 768px) {
+		display: none;
+	}
+`;
+
 const StyledOptionBasket = styled.div`
 	display: flex;
 	align-items: center;
@@ -190,7 +198,7 @@ class Header extends Component {
 								<ArrowDropDownIcon fontSize="small" />
 							</StyledOptionLineTwo>
 								<StyleDropDown>
-									Menu
+									<AccountListDropDown />
 								</StyleDropDown>
 						</StyledOption>
                         <StyledOption>
