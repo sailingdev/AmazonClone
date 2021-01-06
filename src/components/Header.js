@@ -163,6 +163,34 @@ const StyledBasketCount = styled(StyledOptionLineTwo)`
 `
 
 class Header extends Component {
+	constructor() {
+        super();
+        this.state = {
+            menuStatus: "close"
+        }
+
+        this.handleClick = this.handleClick.bind(this);
+    };
+    
+    handleClick() {
+        switch(this.state.menuStatus) {
+            case "open":
+                this.setState({
+                    menuStatus: "close"
+                });
+                break;
+            case "close":
+                this.setState({
+                    menuStatus: "open"
+                });
+                break;
+            default:
+                this.setState({
+                    menuStatus: "close"
+                });
+                break;
+        }
+	}
 
 	render() {
 		return (
