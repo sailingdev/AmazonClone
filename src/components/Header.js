@@ -81,6 +81,35 @@ const StyledOptionLineTwo = styled.span`
 	}
 `;
 
+const StyledHeaderSearch = styled.div`
+	display: flex;
+	flex: 1;
+	align-items: center;
+	border-radius: 24px;
+
+	@media (max-width: 768px) {
+		display: none;
+	}
+`;
+
+const StyledSearchOption = styled.select`
+	height: 34px;
+	width: 150px;
+`;
+
+const StyledSearchInput = styled.input`
+	height: 12px;
+	padding: 10px;
+	border: none;
+	width: 100%;
+`;
+
+const StyledSearchIcon = styled(SearchIcon)`
+	padding: 5px;
+	height: 22px;
+	background-color: #cd9042;
+`;
+
 class Header extends Component {
 
 	render() {
@@ -99,9 +128,18 @@ class Header extends Component {
 							<StyledOptionLineTwo>
 								Select your address
 							</StyledOptionLineTwo>
-
 						</StyledOption>
 					</StyledLocation>
+                    <StyledHeaderSearch>
+						<StyledSearchOption>
+							<option value="StyledOption">All Departments</option>
+							<option value="search-alias=todays-deals">Deals</option>
+							<option value="search-alias=audible">Audible Books & Originals</option>
+							<option value="search-alias=alexa-skills">Alexa Skills</option>
+						</StyledSearchOption>
+						<StyledSearchInput type="text" />
+						<StyledSearchIcon />
+					</StyledHeaderSearch>
                 </StyledHeader>
 			</div>
 
