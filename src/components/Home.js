@@ -17,6 +17,43 @@ const StyledHome = styled.div`
 	}
 `;
 
+const StyledSlider = styled(Slider)`
+	width: 100%;
+	z-index: 0;
+	height: 600px;
+	z-index: 0;
+	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+	.slick-prev{
+		top: 120px;
+		left: 15px;
+		z-index: 1;
+		&:before {
+			font-size: 50px;
+			background: transparent;
+			color: black;
+		}
+		@media (max-width: 768px) {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	
+	.slick-next {
+		top: 120px;
+		right: 40px;
+		z-index: 1;
+		&:before {
+			font-size: 50px;
+			background: transparent;
+			color: black;
+		}
+		@media (max-width: 768px) {
+			display: none;
+			visibility: hidden;
+		}
+	}
+`;
+
 class Home extends Component {
     constructor(props) {
         super();
@@ -46,11 +83,11 @@ class Home extends Component {
 		return (
 			<div>
 				<StyledHome>
-                    <Slider {...settings}>
+                    <StyledSlider {...settings}>
 						{this.state.items.map((imgItem, key) => (
 							<img key={key} src={imgItem.src} alt={imgItem.alt} />
 						))}
-					</Slider>
+					</StyledSlider>
                 </StyledHome>
 			</div>
 
