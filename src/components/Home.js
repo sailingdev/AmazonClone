@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
+import Products from './Products.js';
 
 const StyledHome = styled.div`
 	display: flex;
@@ -88,6 +89,7 @@ class Home extends Component {
 							<img key={key} src={imgItem.src} alt={imgItem.alt} />
 						))}
 					</StyledSlider>
+                    <Products />
                 </StyledHome>
 			</div>
 
