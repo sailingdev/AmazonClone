@@ -1,4 +1,18 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
+const StyledHome = styled.div`
+	display: flex;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 80%;
+	height: 230px;
+	overflow: visible;
+	@media (max-width: 768px) {
+		height: 115px;
+	}
+`;
 
 class Home extends Component {
     constructor(props) {
@@ -19,7 +33,9 @@ class Home extends Component {
 	render() {
 		return (
 			<div>
-				Home
+				<StyledHome>
+                    Home
+                </StyledHome>
 			</div>
 
 		);
