@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import SearchIcon from "@material-ui/icons/Search";
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 
 const StyledHeader = styled.div`
   	height: 60px;
@@ -130,6 +131,27 @@ const StyleDropDown = styled.div`
 	display: none;
 `;
 
+const StyledOptionBasket = styled.div`
+	display: flex;
+	align-items: center;
+    color: white;
+    cursor: pointer;
+    padding: 4px 8px 4px 6px;
+
+	&:hover {
+		cursor: pointer;
+		border: 1px solid;
+		border-radius: 2px;
+		outline: 0;
+		padding: 3px 7px 3px 5px;
+	}
+`;
+
+const StyledBasketCount = styled(StyledOptionLineTwo)`
+	margin-left: 10px;
+	margin-right: 10px;
+`
+
 class Header extends Component {
 
 	render() {
@@ -175,6 +197,10 @@ class Header extends Component {
 							<StyledOptionLineOne>Returns</StyledOptionLineOne>
 							<StyledOptionLineTwo>& Orders</StyledOptionLineTwo>
 						</StyledOption>
+                        <StyledOptionBasket>
+							<ShoppingBasketIcon />
+							<StyledBasketCount>0</StyledBasketCount>
+						</StyledOptionBasket>
 					</StyledHeaderNav>
                 </StyledHeader>
 			</div>
