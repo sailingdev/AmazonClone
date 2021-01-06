@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import FaceIcon from '@material-ui/icons/Face';
 
 const StyledSideBar = styled.div`
     position: fixed;
