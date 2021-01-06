@@ -5,6 +5,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import AccountListDropDown from '../utils/AccountListDropDown.js';
+import SubHeader from './SubHeader.js';
 
 const StyledHeader = styled.div`
   	height: 60px;
@@ -211,6 +212,7 @@ class Header extends Component {
 						</StyledOptionBasket>
 					</StyledHeaderNav>
                 </StyledHeader>
+                <SubHeader />
 			</div>
 
 		);
