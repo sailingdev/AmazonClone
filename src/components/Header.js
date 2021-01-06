@@ -6,6 +6,7 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import AccountListDropDown from '../utils/AccountListDropDown.js';
 import SubHeader from './SubHeader.js';
+import SideBar from './SideBar.js';
 
 const StyledHeader = styled.div`
   	height: 60px;
@@ -166,6 +167,7 @@ class Header extends Component {
 	render() {
 		return (
 			<div>
+                <SideBar />
 				<StyledHeader>
                     <a href="/">
 						<StyledLogo 
