@@ -17,6 +17,18 @@ const StyledImg = styled.div`
     }
 `;
 
+const StyledCopy = styled.div`
+    color: #FFF4E0;
+    font-size: 24px;
+    line-height: 26px;
+    width: 275px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10px;
+    font-family: Amazon Ember, sans-serif;
+    font-weight: 700;
+`;
+
 class PrimeDropDown extends Component {
 
 	render() {
@@ -25,6 +37,10 @@ class PrimeDropDown extends Component {
                 <StyledImg>
                     <img src="https://m.media-amazon.com/images/G/01/marketing/prime/JoyDelivered/prime_logo_RGB_PRIME_OAT._CB439327201_.png" alt="" />
                 </StyledImg>
+                <StyledCopy>
+                    <p>Music.</p>
+                    <p>Movies. Munchies.</p>
+                </StyledCopy>
 			</StyledDropDownContent>
 
 		);
