@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 const StyledHeader = styled.div`
   	height: 60px;
