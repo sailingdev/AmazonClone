@@ -13,12 +13,25 @@ const StyledSideBar = styled.div`
     animation: fadeIn 0.5s;
 `;
 
+const StyledSideBarContent = styled.div`
+    width: 350px;
+    height: 100%;
+    background-color: white;
+    flex-direction: column;
+    box-shadow: 4px 0 10px 0 rgba(0,0,0,.4);
+    will-change: transform;
+`;
+
 class SideBar extends Component {
 
 	render() {
 		return (
 			<div>
-				<StyledSideBar></StyledSideBar>
+				<StyledSideBar>
+                    <StyledSideBarContent>
+                        menu
+                    </StyledSideBarContent>
+                </StyledSideBar>
 			</div>
 
 		);
