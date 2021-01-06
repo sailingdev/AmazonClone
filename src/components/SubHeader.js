@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import DehazeIcon from '@material-ui/icons/Dehaze';
 
 const StyledSubHeader = styled.div`
   	height: 40px;
@@ -42,6 +43,7 @@ class SubHeader extends Component {
 		return (
 			<StyledSubHeader>
                 <StyleSubLabel>
+
                     <div>
                         <a href="/">Customer Service</a>
                     </div>
