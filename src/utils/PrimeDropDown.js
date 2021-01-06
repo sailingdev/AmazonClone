@@ -40,6 +40,32 @@ const StyledSubhead = styled.div`
     font-family: Amazon Ember, sans-serif;
 `;
 
+const StyledButton = styled.div`
+    text-align: center;
+    margin-top: 20px;
+
+    & > button {
+        cursor: pointer;
+        outline: none;
+        border: 0px solid;
+        border-color: #c89411 #b0820f #99710d;
+        -webkit-border-radius: 3px 3px 3px 3px;
+        -moz-border-radius: 3px 3px 3px 3px;
+        border-radius: 5px 5px 5px 5px;
+        background: #ff9900;
+        text-align: center;
+        line-height: 31px;
+        vertical-align: middle;
+        color: #002552;
+        font-family: "arial", "sans-serif";
+        text-decoration: none;
+        display: inline;
+        font-weight: bold;
+        font-size: 14px;
+        padding: .75em;
+    }
+`;
+
 class PrimeDropDown extends Component {
 
 	render() {
@@ -55,6 +81,11 @@ class PrimeDropDown extends Component {
                 <StyledSubhead>
                     Shopping and entertainment all in one place.
                 </StyledSubhead>
+                <StyledButton>
+                    <button>
+                        Try Prime
+                    </button>
+                </StyledButton>
 			</StyledDropDownContent>
 
 		);
