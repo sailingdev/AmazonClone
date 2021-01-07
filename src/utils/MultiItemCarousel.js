@@ -58,6 +58,16 @@ const StyledSlider = styled(Slider)`
 	}
 `;
 
+const StyledWrap = styled.div`
+    padding: 0 10px;
+
+    img {
+        width: auto;
+        max-width: 270px;
+        margin: auto;
+    }
+`;
+
 class MultiItemCarousel extends Component {
 
 	render() {
@@ -102,31 +112,31 @@ class MultiItemCarousel extends Component {
                     <a href="/">see more</a>
                 </StyledCarouselHeader>
                 <StyledSlider {...settings}>
-                    <div>
+                    <StyledWrap>
                         <a href="/">
                             <img alt="Gaiam Restore Cold Therapy - Massage Roller" src="https://m.media-amazon.com/images/I/41u-qzdPyfL._AC_SY200_.jpg" />
                         </a>
-                    </div>
-                    <div>
+                    </StyledWrap>
+                    <StyledWrap>
                         <a href="/">
                             <img alt="Gaiam Restore Cold Therapy - Massage Roller" src="https://m.media-amazon.com/images/I/41CsM+GQFzL._AC_SY200_.jpg" />
                         </a>
-                    </div>
-                    <div>
+                    </StyledWrap>
+                    <StyledWrap>
                         <a href="/">
                             <img alt="Gaiam Restore Cold Therapy - Massage Roller" src="https://m.media-amazon.com/images/I/41fLEAQNy1L._AC_SY200_.jpg" />
                         </a>
-                    </div>
-                    <div>
+                    </StyledWrap>
+                    <StyledWrap>
                         <a href="/">
                             <img alt="Gaiam Restore Cold Therapy - Massage Roller" src="https://m.media-amazon.com/images/I/51IzTvMZamL._AC_SY200_.jpg" />
                         </a>
-                    </div>
-                    <div>
+                    </StyledWrap>
+                    <StyledWrap>
                         <a href="/">
                             <img alt="Gaiam Restore Cold Therapy - Massage Roller" src="https://m.media-amazon.com/images/I/31qyoR8hK-L._AC_SY200_.jpg" />
                         </a>
-                    </div>
+                    </StyledWrap>
                 </StyledSlider>
 			</StyledCarousel>
 		);
