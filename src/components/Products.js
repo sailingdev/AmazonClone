@@ -21,6 +21,26 @@ const StyledRow = styled.div`
 `;
 
 class Products extends Component {
+    constructor() {
+        super();
+        this.state = {
+            multiItems: [
+                {image: 'https://m.media-amazon.com/images/I/41u-qzdPyfL._AC_SY200_.jpg', title: 'Gaiam Restore Cold Therapy - Massage Roller'},
+                {image: 'https://m.media-amazon.com/images/I/41CsM+GQFzL._AC_SY200_.jpg', title: 'RBX Hot and Cold Active Foot Roller for Plantar Fasciitis and Heel Spurs'},
+                {image: 'https://m.media-amazon.com/images/I/41fLEAQNy1L._AC_SY200_.jpg', title:"FUN n 'SAFE Exercise Mat, EVA Interlocking Tiles for Gym, Garage, Workspace, and Home Fitness Area"},
+                {image: 'https://m.media-amazon.com/images/I/51IzTvMZamL._AC_SY200_.jpg', title: 'MoonRun Cardio Portable Trainer for Home Training with Virtual Running Apps.  Home gym ...'},
+                {image: 'https://m.media-amazon.com/images/I/31qyoR8hK-L._AC_SY200_.jpg', title: 'Gaiam Restore Cold Therapy Massage Roller'},
+                {image: 'https://m.media-amazon.com/images/I/41dCWm3FGxL._AC_SY200_.jpg', alt: 'Cathe Friedrich s Low Impact Series: Turbo Barre [DVD]'},
+                {image: 'https://m.media-amazon.com/images/I/411S1ljtHbL._AC_SY200_.jpg', alt: 'Plant People - Sinus Support |  Promote a healthy immune response for discomfort and pressure in the nose and head ...'},
+                {image: 'https://m.media-amazon.com/images/I/41fpNTkwylL._AC_SY200_.jpg', title: 'alt="Kola Goodies Super Green Latte - Plant-Based Nutrition and Focus Boost with Moringa, Gotukola and Spices (30 ..."'},
+                {image: 'https://m.media-amazon.com/images/I/41uscdhTktL._AC_SY200_.jpg', title: '32oz Vacuum Insulated Water Bottle with 2 Caps (Spout + Straw Cap) BPA Free, BPA Free Water Bottle with ...'},
+                {image: 'https://m.media-amazon.com/images/I/51gjsaBMRYL._AC_SY200_.jpg', title: 'Smart Thermos Thermos with Fahrenheit Temperature Indicator, Vacuum Insulated Stainless Steel Coffee or Tea Mug ...'},
+                {image: 'https://m.media-amazon.com/images/I/41doaASfXbL._AC_SY200_.jpg', title: 'Cathe Friedrich Low Impact Series: Athletic Workout'},
+                {image: 'https://m.media-amazon.com/images/I/41mm60Zx9CL._AC_SY200_.jpg', title: 'Flyby - Alcohol Recovery Drink for Better Mornings and Quick Hydration Aid (6 Count) - Made of ...'},
+                {image: 'https://m.media-amazon.com/images/I/41yMLUr3LYL._AC_SY200_.jpg', title: 'Green Minded Goods Bamboo Lunch Box - BPA Free, Leak Proof, Microwave and Dishwasher Safe, Easy Care, ...'},
+            ],
+        };
+    };
 
 	render() {
 		return (
@@ -48,7 +68,10 @@ class Products extends Component {
                             footer="See all deals"
                         />
                     </StyledRow>
-                    <MultiItemCarousel />
+                    <MultiItemCarousel
+                        title="Related to the items you saw"
+                        items={this.state.multiItems}
+                    />
                 </StyledProductsContent>
 			</StyledProducts>
 

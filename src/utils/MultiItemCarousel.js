@@ -108,35 +108,17 @@ class MultiItemCarousel extends Component {
 		return (
 			<StyledCarousel>
 				<StyledCarouselHeader>
-                    <h3>Title</h3>
+                    <h3>{this.props.title}</h3>
                     <a href="/">see more</a>
                 </StyledCarouselHeader>
                 <StyledSlider {...settings}>
-                    <StyledWrap>
-                        <a href="/">
-                            <img alt="Gaiam Restore Cold Therapy - Massage Roller" src="https://m.media-amazon.com/images/I/41u-qzdPyfL._AC_SY200_.jpg" />
-                        </a>
-                    </StyledWrap>
-                    <StyledWrap>
-                        <a href="/">
-                            <img alt="Gaiam Restore Cold Therapy - Massage Roller" src="https://m.media-amazon.com/images/I/41CsM+GQFzL._AC_SY200_.jpg" />
-                        </a>
-                    </StyledWrap>
-                    <StyledWrap>
-                        <a href="/">
-                            <img alt="Gaiam Restore Cold Therapy - Massage Roller" src="https://m.media-amazon.com/images/I/41fLEAQNy1L._AC_SY200_.jpg" />
-                        </a>
-                    </StyledWrap>
-                    <StyledWrap>
-                        <a href="/">
-                            <img alt="Gaiam Restore Cold Therapy - Massage Roller" src="https://m.media-amazon.com/images/I/51IzTvMZamL._AC_SY200_.jpg" />
-                        </a>
-                    </StyledWrap>
-                    <StyledWrap>
-                        <a href="/">
-                            <img alt="Gaiam Restore Cold Therapy - Massage Roller" src="https://m.media-amazon.com/images/I/31qyoR8hK-L._AC_SY200_.jpg" />
-                        </a>
-                    </StyledWrap>
+                    {this.props.items.map((item, key) => (
+                        <StyledWrap key={key}>
+                            <a href="/">
+                                <img alt={item.alt} src={item.image} />
+                            </a>
+                        </StyledWrap>
+                    ))}
                 </StyledSlider>
 			</StyledCarousel>
 		);
