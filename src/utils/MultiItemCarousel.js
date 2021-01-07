@@ -24,11 +24,45 @@ const StyledCarouselHeader = styled.div`
     }
 `;
 
+const StyledSlider = styled(Slider)`
+    background: white;
+    padding: 40px 0;
+	.slick-prev{
+		top: 120px;
+		left: 15px;
+		z-index: 1;
+		&:before {
+			font-size: 50px;
+			background: transparent;
+			color: black;
+		}
+		@media (max-width: 768px) {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	
+	.slick-next {
+		top: 120px;
+		right: 40px;
+		z-index: 1;
+		&:before {
+			font-size: 50px;
+			background: transparent;
+			color: black;
+		}
+		@media (max-width: 768px) {
+			display: none;
+			visibility: hidden;
+		}
+	}
+`;
+
 class MultiItemCarousel extends Component {
 
 	render() {
         var settings = {
-            dots: true,
+            dots: false,
             infinite: false,
             speed: 500,
             slidesToShow: 4,
@@ -67,35 +101,33 @@ class MultiItemCarousel extends Component {
                     <h3>Title</h3>
                     <a href="/">see more</a>
                 </StyledCarouselHeader>
-                <Slider {...settings}>
+                <StyledSlider {...settings}>
                     <div>
-                        <h3>1</h3>
+                        <a href="/">
+                            <img alt="Gaiam Restore Cold Therapy - Massage Roller" src="https://m.media-amazon.com/images/I/41u-qzdPyfL._AC_SY200_.jpg" />
+                        </a>
                     </div>
                     <div>
-                        <h3>2</h3>
+                        <a href="/">
+                            <img alt="Gaiam Restore Cold Therapy - Massage Roller" src="https://m.media-amazon.com/images/I/41CsM+GQFzL._AC_SY200_.jpg" />
+                        </a>
                     </div>
                     <div>
-                        <h3>3</h3>
+                        <a href="/">
+                            <img alt="Gaiam Restore Cold Therapy - Massage Roller" src="https://m.media-amazon.com/images/I/41fLEAQNy1L._AC_SY200_.jpg" />
+                        </a>
                     </div>
                     <div>
-                        <h3>4</h3>
+                        <a href="/">
+                            <img alt="Gaiam Restore Cold Therapy - Massage Roller" src="https://m.media-amazon.com/images/I/51IzTvMZamL._AC_SY200_.jpg" />
+                        </a>
                     </div>
                     <div>
-                        <h3>5</h3>
+                        <a href="/">
+                            <img alt="Gaiam Restore Cold Therapy - Massage Roller" src="https://m.media-amazon.com/images/I/31qyoR8hK-L._AC_SY200_.jpg" />
+                        </a>
                     </div>
-                    <div>
-                        <h3>6</h3>
-                    </div>
-                    <div>
-                        <h3>7</h3>
-                    </div>
-                    <div>
-                        <h3>8</h3>
-                    </div>
-                    <div>
-                        <h3>9</h3>
-                    </div>
-                </Slider>
+                </StyledSlider>
 			</StyledCarousel>
 		);
 	}
