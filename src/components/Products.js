@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ProductItem from '../utils/ProductItem.js';
+import MultiItemCarousel from '../utils/MultiItemCarousel.js';
 
 const StyledProducts = styled.div`
     padding: 0 10px 0;
@@ -47,6 +48,7 @@ class Products extends Component {
                             footer="See all deals"
                         />
                     </StyledRow>
+                    <MultiItemCarousel />
                 </StyledProductsContent>
 			</StyledProducts>
 
