@@ -57,6 +57,60 @@ const StyledFooter = styled.div`
 	}
 `;
 
+const StyledLogo = styled.img`
+	width: 70px;
+	object-fit: contain;
+	vertical-align: bottom;
+	margin-right: 70px;  
+`;
+
+const StyledDeclarative = styled.a`
+	display: inline-block!important;
+	border: 1px solid #848688;
+	border-radius: 3px;
+	padding: 6px 18px 6px 8px;
+	font-size: 13px;
+	margin-right: 4px;
+	text-decoration: none;
+
+	span {
+		color: #CCC;
+		padding: 0 .6em;
+	}
+`;
+
+const StyledUpDownArrow = styled.span`
+	background: url(https://m.media-amazon.com/images/S/sash/jYdmIJv-COIU_a2.png);
+	width: 12px;
+	height: 12px;
+	background-position: -77px -80px;
+	position: relative;
+    left: 5px;
+    top: 2px;
+`;
+
+const StyledGlobeImg = styled.div`
+	display: inline-block;
+	background: url(https://m.media-amazon.com/images/S/sash/jYdmIJv-COIU_a2.png);
+	position: relative;
+	width: 15px;
+    height: 15px;
+    background-position: -76px -51px;
+    top: 2px;
+    left: 0;
+`;
+
+const StyledFlag = styled.div`
+	width: 18px;
+	position: relative;
+	top: 2px;
+	margin-right: .8em;
+	display: inline-block;
+	height: 12px;
+	margin: 0 .6em;
+	background-image: url(https://m.media-amazon.com/images/S/sash/jYdmIJv-COIU_a2.png);
+	background-position: -54px -108px;
+`;
 
 class Footer extends Component {
 
@@ -115,7 +169,20 @@ class Footer extends Component {
 						</div>
 					</div>
 				</StyledItemLine>
-				<StyledItemLine>2</StyledItemLine>
+				<StyledItemLine>
+					<a href="/">
+						<StyledLogo src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" />
+					</a>
+					<StyledDeclarative href="#">
+						<StyledGlobeImg />
+						<span>English</span>
+						<StyledUpDownArrow />
+					</StyledDeclarative>
+					<StyledDeclarative href="#">
+						<StyledFlag />
+						<span>United States</span>
+					</StyledDeclarative>
+				</StyledItemLine>
 				<StyledItemLine>3</StyledItemLine>
 				<StyledItemLine>4</StyledItemLine>
 			</StyledFooter>
