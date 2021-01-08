@@ -55,6 +55,22 @@ const StyledSlider = styled(Slider)`
 	}
 `;
 
+const StyledToTop = styled.div`
+	background-color: #37475A;
+	display: block;
+	text-align: center;
+	color: #111;
+	padding: 15px 0;
+	color: #FFF;
+	line-height: 19px;
+	font-size: 13px;
+	cursor: pointer;
+	
+	&:hover {
+		background-color: #485769;
+	}
+`;
+
 class Home extends Component {
     constructor(props) {
         super();
@@ -70,9 +86,14 @@ class Home extends Component {
             ],
         };
     };
-
+	
 	render() {
-        const settings = {
+	
+		const scrollTop = () =>{
+			window.scrollTo({top: 0, behavior: 'smooth'});
+		 };
+	
+		 const settings = {
 			dots: false,
 			infinite: true,
 			speed: 500,
@@ -91,6 +112,11 @@ class Home extends Component {
 					</StyledSlider>
                 </StyledHome>
                 <Products />
+				<StyledToTop
+					onClick={scrollTop}
+				>
+					Top to Page
+				</StyledToTop>
 			</div>
 
 		);
