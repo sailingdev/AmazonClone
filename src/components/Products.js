@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ProductItem from '../utils/ProductItem.js';
+import ProductItemGroup from '../utils/ProductItemGroup.js';
 import MultiItemCarousel from '../utils/MultiItemCarousel.js';
 
 const StyledProducts = styled.div`
@@ -67,6 +68,9 @@ class Products extends Component {
                             img="https://m.media-amazon.com/images/I/41FHFmuc21L._AC_SY240_.jpg"
                             footer="See all deals"
                         />
+                    </StyledRow>
+                    <StyledRow>
+                        <ProductItemGroup />
                     </StyledRow>
                     <MultiItemCarousel
                         title="Related to the items you saw"
