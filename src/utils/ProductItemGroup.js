@@ -69,6 +69,10 @@ const StyledProductImgWrap = styled.a`
     img {
         max-height: 120px;
     }
+
+    span {
+        font-size: 12px;
+    }
 `;
 
 class ProductItemGroup extends Component {
