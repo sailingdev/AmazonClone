@@ -30,9 +30,12 @@ const StyledProductItemHeader = styled.div`
 `;
 
 const StyledProductItemBody = styled.div`
-    flex-grow: 1;
-    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
     height: 275px;
+    max-height: 275px;
 `;
 
 const StyledProductItemFooter = styled.div`
@@ -52,20 +55,22 @@ const StyledProductTitle = styled.h2`
     max-height: 54.6px;
 `;
 
-const StyledProductImgWrap = styled.div`
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+const StyledProductImgWrap = styled.a`
+    width: 50%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-decoration: none;
+    div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    img {
+        max-height: 120px;
+    }
 `;
 
-const StyledProductImg = styled.img`
-    margin: auto;
-    max-height: 100%;
-    height: 100%;
-    max-width: none;
-    width: 100%;
-`;
 class ProductItemGroup extends Component {
 
 	render() {
@@ -73,18 +78,37 @@ class ProductItemGroup extends Component {
             <StyledProductItem>
                 <StyledProductItemContent>
                     <StyledProductItemHeader>
-                        <StyledProductTitle>{this.props.title}</StyledProductTitle>
+                        <StyledProductTitle>Title</StyledProductTitle>
                     </StyledProductItemHeader>
                     <StyledProductItemBody>
-                        <a href="/">
-                            <StyledProductImgWrap>
-                                <StyledProductImg  src={this.props.img}/>
+                            <StyledProductImgWrap href="/">
+                                <div>
+                                    <img src="https://m.media-amazon.com/images/I/51DZeZw7K0L._AC_SY119_.jpg" alt="" />
+                                    <span>description</span>
+                                </div>
                             </StyledProductImgWrap>
-                        </a>
+                            <StyledProductImgWrap href="/">
+                                <div>
+                                    <img src="https://m.media-amazon.com/images/I/51DZeZw7K0L._AC_SY119_.jpg" alt="" />
+                                    <span>description</span>
+                                </div>
+                            </StyledProductImgWrap>
+                            <StyledProductImgWrap href="/">
+                                <div>
+                                    <img src="https://m.media-amazon.com/images/I/51DZeZw7K0L._AC_SY119_.jpg" alt="" />
+                                    <span>description</span>
+                                </div>
+                            </StyledProductImgWrap>
+                            <StyledProductImgWrap href="/">
+                                <div>
+                                    <img src="https://m.media-amazon.com/images/I/51DZeZw7K0L._AC_SY119_.jpg" alt="" />
+                                    <span>description</span>
+                                </div>
+                            </StyledProductImgWrap>
                     </StyledProductItemBody>
                     <StyledProductItemFooter>
                         <a href="/">
-                            {this.props.footer}
+                            Fitness for the new yeaer
                         </a>
                     </StyledProductItemFooter>
                 </StyledProductItemContent>
