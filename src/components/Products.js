@@ -70,7 +70,16 @@ class Products extends Component {
                         />
                     </StyledRow>
                     <StyledRow>
-                        <ProductItemGroup />
+                        <ProductItemGroup
+                            title="New: listen without limits"
+                            items={[
+                                    { image: 'https://m.media-amazon.com/images/I/51DZeZw7K0L._AC_SY119_.jpg', description: ''},
+                                    { image: 'https://m.media-amazon.com/images/I/51EocHLTvAL._AC_SY119_.jpg', description: ''},
+                                    { image: 'https://m.media-amazon.com/images/I/61B3aGt2hDL._AC_SY119_.jpg', description: ''},
+                                    { image: 'https://m.media-amazon.com/images/I/81o43rQ2rZL._AC_SY238_.jpg', description: ''},
+                                ]}
+                            footer="More information"                        
+                        />
                     </StyledRow>
                     <MultiItemCarousel
                         title="Related to the items you saw"

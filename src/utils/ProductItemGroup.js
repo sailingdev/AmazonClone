@@ -78,37 +78,21 @@ class ProductItemGroup extends Component {
             <StyledProductItem>
                 <StyledProductItemContent>
                     <StyledProductItemHeader>
-                        <StyledProductTitle>Title</StyledProductTitle>
+                        <StyledProductTitle>{this.props.title}</StyledProductTitle>
                     </StyledProductItemHeader>
                     <StyledProductItemBody>
-                            <StyledProductImgWrap href="/">
+                        {this.props.items.map((item, key) => (
+                            <StyledProductImgWrap key={key} href="/">
                                 <div>
-                                    <img src="https://m.media-amazon.com/images/I/51DZeZw7K0L._AC_SY119_.jpg" alt="" />
-                                    <span>description</span>
+                                    <img src={item.image} alt={item.description} />
+                                    <span>{item.description}</span>
                                 </div>
                             </StyledProductImgWrap>
-                            <StyledProductImgWrap href="/">
-                                <div>
-                                    <img src="https://m.media-amazon.com/images/I/51DZeZw7K0L._AC_SY119_.jpg" alt="" />
-                                    <span>description</span>
-                                </div>
-                            </StyledProductImgWrap>
-                            <StyledProductImgWrap href="/">
-                                <div>
-                                    <img src="https://m.media-amazon.com/images/I/51DZeZw7K0L._AC_SY119_.jpg" alt="" />
-                                    <span>description</span>
-                                </div>
-                            </StyledProductImgWrap>
-                            <StyledProductImgWrap href="/">
-                                <div>
-                                    <img src="https://m.media-amazon.com/images/I/51DZeZw7K0L._AC_SY119_.jpg" alt="" />
-                                    <span>description</span>
-                                </div>
-                            </StyledProductImgWrap>
+                        ))}
                     </StyledProductItemBody>
                     <StyledProductItemFooter>
                         <a href="/">
-                            Fitness for the new yeaer
+                            {this.props.footer}
                         </a>
                     </StyledProductItemFooter>
                 </StyledProductItemContent>
