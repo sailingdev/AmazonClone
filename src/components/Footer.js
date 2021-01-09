@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import ReactFlagsSelect from 'react-flags-select';
 
 const StyledItemLine = styled.div`
 	padding: 25px;	
