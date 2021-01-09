@@ -131,6 +131,7 @@ const StyledDeclarative = styled.a`
 	margin-right: 4px;
 	text-decoration: none;
 	position: relative;
+	cursor: pointer;
 
 	span {
 		color: #CCC;
@@ -303,15 +304,33 @@ class Footer extends Component {
 		super();
 		this.state = {
 			language: 'english',
+			open: false
 		};
 
 		this.changeLanguage = this.changeLanguage.bind(this);
+		this.handleOpen = this.handleOpen.bind(this);
+		this.handleClose = this.handleClose.bind(this);
 	}
 	
 	changeLanguage(e) {
 		this.setState({
 			language: e.currentTarget.value,
 		})
+	}
+
+	handleOpen() {
+		this.setState({
+			open: true
+		});
+	}
+
+	handleClose(event) {
+		event.preventDefault();
+		if(event.target === event.currentTarget) {
+			this.setState({
+				open: false
+			});
+		}
 	}
 
 	render() {
@@ -402,14 +421,15 @@ class Footer extends Component {
 							</StyledChoose>
 						</StyleDropDown>
 					</StyledDeclarative>
-					<StyledDeclarative href="#">
+					<StyledDeclarative onClick={this.handleOpen}>
 						<StyledFlag />
 						<span>United States</span>
 					</StyledDeclarative>
 				</StyledItemLine>
 				<StyledItemLine>3</StyledItemLine>
 				<StyledItemLine>4</StyledItemLine>
-				<StyledModal onClick={this.handleClose}>
+				{ this.state.open === true && 
+					<StyledModal onClick={this.handleClose}>
 						<StyledModalContent>
 							<StyledModalWrap>
 								<StyledModalHeader>
@@ -440,7 +460,8 @@ class Footer extends Component {
 								</StyledModalFooter>
 							</StyledModalWrap>
 						</StyledModalContent>
-				</StyledModal>
+					</StyledModal>
+				}
 			</StyledFooter>
 		);
 	}
