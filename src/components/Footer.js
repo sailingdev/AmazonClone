@@ -299,6 +299,22 @@ const StyledModalFooter = styled.div`
 	}
 `;
 
+const StyledItemDescription = styled(StyledItemLine)`
+	li {
+		margin-bottom: 35px;
+		width: 96px;
+		line-height: 12px;
+		a {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		small {
+			color: #999;
+		}
+	}
+`;
+
 class Footer extends Component {
 	constructor() {
 		super();
@@ -426,7 +442,164 @@ class Footer extends Component {
 						<span>United States</span>
 					</StyledDeclarative>
 				</StyledItemLine>
-				<StyledItemLine>3</StyledItemLine>
+				<StyledItemDescription>
+					<div>
+						<div>
+							<ul>
+								<li>
+									<a href="/">
+										<p>Amazon Music</p>
+										<small>Stream millions of songs</small>
+									</a>
+								</li>
+								<li>
+									<a href="/">
+										<p>Sell on Amazon</p>
+										<small>Start a Selling Account</small>
+									</a>
+								</li>
+								<li>
+									<a href="/">
+										<p>Amazon Web Services</p>
+										<small>Scalable Cloud Computing Service</small>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div>
+							<ul>
+								<li>
+									<a href="/">
+										<p>Amazon Advertising</p>
+										<small>Find, attract, and engage customers</small>
+									</a>
+								</li>
+								<li>
+									<a href="/">
+										<p>Amazon Business</p>
+										<small>Everything For Your Business</small>
+									</a>
+								</li>
+								<li>
+									<a href="/">
+										<p>Audible</p>
+										<small>Listen to Books & Original</small>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div>
+							<ul>
+								<li>
+									<a href="/">
+										<p>Amazon Drive</p>
+										<small>Cloud storage from Amazon</small>
+									</a>
+								</li>
+								<li>
+									<a href="/">
+										<p>Amazon Fresh</p>
+										<small>Groceries & More Right To Your Door</small>
+									</a>
+								</li>
+								<li>
+									<a href="/">
+										<p>Book Depository</p>
+										<small>Books With Free Delivery WorldWide</small>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div>
+							<ul>
+								<li>
+									<a href="/">
+										<p>6pm</p>
+										<small>Score deals on fashion brands</small>
+									</a>
+								</li>
+								<li>
+									<a href="/">
+										<p>AmazonGlobal</p>
+										<small>Ship Orders Internationally</small>
+									</a>
+								</li>
+								<li>
+									<a href="/">
+										<p>Box Office Mojo</p>
+										<small>Find Movie Box Office Data</small>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div>
+							<ul>
+								<li>
+									<a href="/">
+										<p>AbeBooks</p>
+										<small>Books, art & collectibles</small>
+									</a>
+								</li>
+								<li>
+									<a href="/">
+										<p>Home Services</p>
+										<small>Experienced Pros Happiness</small>
+									</a>
+								</li>
+								<li>
+									<a href="/">
+										<p>ComiXology</p>
+										<small>Kindle Direct Publishing</small>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div>
+							<ul>
+								<li>
+									<a href="/">
+										<p>ACX</p>
+										<small>Audiobook Publishing Made Easy</small>
+									</a>
+								</li>
+								<li>
+									<a href="/">
+										<p>DPReview</p>
+										<small>Digital Photography</small>
+									</a>
+								</li>
+								<li>
+									<a href="/">
+										<p>Alexa</p>
+										<small>Actionable Analytics for the web</small>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div>
+							<ul>
+								<li>
+									<a href="/">
+										<p>Amazon Rapids</p>
+										<small>Fun stories for kids on the go</small>
+									</a>
+								</li>
+								<li>
+									<a href="/">
+										<p>East Dane</p>
+										<small>Designer Men's Fashion</small>
+									</a>
+								</li>
+								<li>
+									<a href="/">
+										<p>Prime Video Direct</p>
+										<small>Video Distribution Made Easy</small>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</StyledItemDescription>
 				<StyledItemLine>4</StyledItemLine>
 				{ this.state.open === true && 
 					<StyledModal onClick={this.handleClose}>
