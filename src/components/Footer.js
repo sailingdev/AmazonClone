@@ -214,6 +214,24 @@ const StyledModalWrap = styled.div`
 	height: 333px;
 `;
 
+const StyledModalHeader = styled.header`
+	border-bottom: 1px solid #D5D9D9;
+    background-color: #F0F2F2;
+    border-radius: 8px 8px 0 0;
+	padding: 0 24px;
+	background: linear-gradient(to bottom,#f7f7f7,#eaeaea);
+	box-shadow: 0 1px 0 rgba(255,255,255,.5) inset, 0 -1px 0 rgba(255,255,255,.4) inset;
+	position: relative;
+	text-align: left;
+	margin: 0;
+    z-index: 10;
+`;
+
+const StyledModalTitle = styled.h4`
+	padding: 16px 0;
+	font-size: 16px;
+`;
+
 class Footer extends Component {
 	constructor() {
 		super();
@@ -328,7 +346,9 @@ class Footer extends Component {
 				<StyledModal onClick={this.handleClose}>
 						<StyledModalContent>
 							<StyledModalWrap>
-								Modal
+								<StyledModalHeader>
+									<StyledModalTitle>Website (Country/Region)</StyledModalTitle>
+								</StyledModalHeader>
 							</StyledModalWrap>
 						</StyledModalContent>
 				</StyledModal>
