@@ -76,6 +76,7 @@ const StyleDropDown = styled.div`
     padding: 10px;
     border-radius: 3px;
 	z-index:3;
+	display: none;
     width: 200px;
 	box-sizing: border-box;
 `;
@@ -133,6 +134,12 @@ const StyledDeclarative = styled.a`
 	span {
 		color: #CCC;
 		padding: 0 .6em;
+	}
+
+	&:hover {
+		${StyleDropDown} {
+			display: block;
+		}
 	}
 `;
 
@@ -244,9 +251,9 @@ class Footer extends Component {
 					<a href="/">
 						<StyledLogo src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" />
 					</a>
-					<StyledDeclarative href="#">
+					<StyledDeclarative>
 						<StyledGlobeImg />
-						<span>English</span>
+						<span>{this.state.language}</span>
 						<StyledUpDownArrow />
 						<StyleDropDown>
 							<FlyoutArrow />
