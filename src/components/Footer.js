@@ -233,6 +233,71 @@ const StyledModalTitle = styled.h4`
 	font-size: 16px;
 `;
 
+const StyledModalInner = styled.div`
+	padding: 16px 24px;
+	text-align: left;
+	display: flex;
+	flext-direction: row;
+	
+	& > div {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		& > div {
+			margin-top: 10px;
+			button {
+				font-size: 14px;
+				border-color: #D5D9D9;
+				border-radius: 8px;
+				color: #0F1111;
+				box-shadow: 0 2px 5px rgba(15,17,17,.15);
+				background: #F0F2F2;
+				height: 29px;
+				width: 90%;
+			}
+		}
+
+		p {
+			font-size: 14px;
+			font-weight: 700;
+		}
+		span {
+			font-size: 13px;
+			line-height: 25px;
+		}
+
+		&:last-child: {
+			padding-left: 10px;
+		}
+	}
+`;
+
+const StyledModalFooter = styled.div`
+	position: absolute;
+	bottom: 20px;
+	right: 30px;
+	display: flex;
+    align-items: center;
+	flex-direction: row;
+	button {
+		line-height: 29px;
+		background: #e7e9ec;
+		border-radius: 3px;
+		border-color: #ADB1B8 #A2A6AC #8D9096;
+		border-style: solid;
+		border-width: 1px;
+		cursor: pointer;
+		padding: 0;
+		width: 100px;
+		height: 100%;
+		margin-right: 10px;
+
+		&:last-child {
+			background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+		}
+	}
+`;
+
 class Footer extends Component {
 	constructor() {
 		super();
@@ -350,6 +415,29 @@ class Footer extends Component {
 								<StyledModalHeader>
 									<StyledModalTitle>Website (Country/Region)</StyledModalTitle>
 								</StyledModalHeader>
+								<StyledModalInner>
+									<div>
+										<p>Select your preferred country/region website:</p>
+										<ReactFlagsSelect 
+											selected={this.state.selectedCountry} 
+											defaultCountry="US"
+											onSelect={code => this.setState({selectedCountry: code})}
+											selectedSize={14}
+										/>
+										<div>
+											<span><b>NOTE: </b></span> 
+											<span>A new country/region website selection will open in a new tab.</span>
+										</div>
+									</div>
+									<div>
+										<p>Changing country/region website</p>
+										<span>Changing the country/region you shop from may affect factors including price, shipping options and product availability.</span>
+									</div>
+								</StyledModalInner>
+								<StyledModalFooter>
+									<button onClick={this.handleClose}>Cancel</button>
+									<button>Go to website</button>
+								</StyledModalFooter>
 							</StyledModalWrap>
 						</StyledModalContent>
 				</StyledModal>
