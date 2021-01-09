@@ -144,6 +144,20 @@ const StyledFlag = styled.div`
 `;
 
 class Footer extends Component {
+	constructor() {
+		super();
+		this.state = {
+			language: 'english',
+		};
+
+		this.changeLanguage = this.changeLanguage.bind(this);
+	}
+	
+	changeLanguage(e) {
+		this.setState({
+			language: e.currentTarget.value,
+		})
+	}
 
 	render() {
 		return (
@@ -210,7 +224,26 @@ class Footer extends Component {
 						<StyledUpDownArrow />
 						<StyleDropDown>
 							<FlyoutArrow />
-							dropdown
+							<div>
+								<input 
+									id="english"
+									type="radio" 
+									value="english"
+									checked={this.state.language === 'english'}
+									onChange={this.changeLanguage}
+								/>
+								<label htmlFor="english">English - EN</label>
+							</div>
+							<div>
+								<input 
+									id="spanish"
+									type="radio"
+									value="spanish"
+									checked={this.state.language === 'spanish'}
+									onChange={this.changeLanguage}
+								/>
+								<label htmlFor="spanish">Spanish - ES</label>
+							</div>
 						</StyleDropDown>
 					</StyledDeclarative>
 					<StyledDeclarative href="#">
