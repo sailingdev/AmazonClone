@@ -80,6 +80,32 @@ const StyleDropDown = styled.div`
 	box-sizing: border-box;
 `;
 
+const StyledChoose = styled.div`
+	display: flex;
+	align-items: center;
+`;
+
+const StyledInput = styled.input`
+	margin: .4rem;
+`;
+
+const StyledLabel = styled.label`
+	font-size: 1rem 'Fira Sans', sans-serif;
+	cursor: pointer;
+`;
+
+const StyledDivider = styled.div`
+	margin-top: 6px;
+	margin-left: 24px;
+	position: relative;
+    display: block;
+    line-height: 1px;
+    height: 1px;
+    overflow: hidden;
+    background: #EEE;
+    margin: 0 0 9px;
+`;
+
 const FlyoutArrow = styled.div`
 	border-style: solid;
 	border-width: 9px;
@@ -224,26 +250,27 @@ class Footer extends Component {
 						<StyledUpDownArrow />
 						<StyleDropDown>
 							<FlyoutArrow />
-							<div>
-								<input 
+							<StyledChoose>
+								<StyledInput 
 									id="english"
 									type="radio" 
 									value="english"
 									checked={this.state.language === 'english'}
 									onChange={this.changeLanguage}
 								/>
-								<label htmlFor="english">English - EN</label>
-							</div>
-							<div>
-								<input 
+								<StyledLabel htmlFor="english">English - EN</StyledLabel>
+							</StyledChoose>
+							<StyledDivider />
+							<StyledChoose>
+								<StyledInput 
 									id="spanish"
 									type="radio"
 									value="spanish"
 									checked={this.state.language === 'spanish'}
 									onChange={this.changeLanguage}
 								/>
-								<label htmlFor="spanish">Spanish - ES</label>
-							</div>
+								<StyledLabel htmlFor="spanish">Spanish - ES</StyledLabel>
+							</StyledChoose>
 						</StyleDropDown>
 					</StyledDeclarative>
 					<StyledDeclarative href="#">
