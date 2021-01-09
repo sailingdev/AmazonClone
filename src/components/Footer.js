@@ -600,7 +600,9 @@ class Footer extends Component {
 						</div>
 					</div>
 				</StyledItemDescription>
-				<StyledItemLine>4</StyledItemLine>
+				<StyledItemLine>
+					Conditions of Use Privacy Notice Interest-Based Ads <small>@ 1996-2020, Amazon.com, Inc. or its affiliates</small>
+				</StyledItemLine>
 				{ this.state.open === true && 
 					<StyledModal onClick={this.handleClose}>
 						<StyledModalContent>
