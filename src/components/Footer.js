@@ -143,6 +143,31 @@ const StyledDeclarative = styled.a`
 	}
 `;
 
+const StyledModal = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100000;
+    color: black;
+    background-color: rgba(0,0,0, .8);
+    animation: fadeIn 0.5s;
+`;
+
+const StyledModalContent = styled.div`
+width: 600px;
+    max-width: none;
+    visibility: visible;
+    position: absolute;
+    margin: 0px;
+    top: 166px;
+    left: 660px;
+    opacity: 1;
+    transform: translateY(8px);
+    display: block;
+`;
+
 const StyledUpDownArrow = styled.span`
 	background: url(https://m.media-amazon.com/images/S/sash/jYdmIJv-COIU_a2.png);
 	width: 12px;
@@ -174,6 +199,19 @@ const StyledFlag = styled.div`
 	margin: 0 .6em;
 	background-image: url(https://m.media-amazon.com/images/S/sash/jYdmIJv-COIU_a2.png);
 	background-position: -54px -108px;
+`;
+
+const StyledModalWrap = styled.div`
+	position: relative;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #D5D9D9;
+    box-shadow: 0 0 14px 0 rgba(15,17,17,.5);
+	height: 100%;
+	background-color: #fff;
+	overflow: hidden;
+	width: 100%;
+	height: 333px;
 `;
 
 class Footer extends Component {
@@ -287,6 +325,13 @@ class Footer extends Component {
 				</StyledItemLine>
 				<StyledItemLine>3</StyledItemLine>
 				<StyledItemLine>4</StyledItemLine>
+				<StyledModal onClick={this.handleClose}>
+						<StyledModalContent>
+							<StyledModalWrap>
+								Modal
+							</StyledModalWrap>
+						</StyledModalContent>
+				</StyledModal>
 			</StyledFooter>
 		);
 	}
