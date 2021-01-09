@@ -64,6 +64,36 @@ const StyledLogo = styled.img`
 	margin-right: 70px;  
 `;
 
+const StyleDropDown = styled.div`
+    top: 32px;
+    left: -8px;
+    position: absolute;
+    color: black;
+    background: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.13);
+    list-style-type: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+	z-index:3;
+    width: 200px;
+	box-sizing: border-box;
+`;
+
+const FlyoutArrow = styled.div`
+	border-style: solid;
+	border-width: 9px;
+	border-color: transparent;
+	border-top-width: 0;
+	border-bottom: 9px solid #fff;
+	width: 0;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	position: absolute;
+	top: -9px;
+`;
+
 const StyledDeclarative = styled.a`
 	display: inline-block!important;
 	border: 1px solid #848688;
@@ -72,6 +102,7 @@ const StyledDeclarative = styled.a`
 	font-size: 13px;
 	margin-right: 4px;
 	text-decoration: none;
+	position: relative;
 
 	span {
 		color: #CCC;
@@ -177,6 +208,10 @@ class Footer extends Component {
 						<StyledGlobeImg />
 						<span>English</span>
 						<StyledUpDownArrow />
+						<StyleDropDown>
+							<FlyoutArrow />
+							dropdown
+						</StyleDropDown>
 					</StyledDeclarative>
 					<StyledDeclarative href="#">
 						<StyledFlag />
