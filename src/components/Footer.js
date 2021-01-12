@@ -1,6 +1,317 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ReactFlagsSelect from 'react-flags-select';
+
+function Footer() {
+	const [language, setLanguage] = useState('english');
+	const [open, setOpen] = useState(false);
+	const [selectedCountry, setSelectedCountry] = useState('US');
+
+	const changeLanguage = (e) => {
+		setLanguage(e.currentTarget.value);
+	}
+
+	const handleOpen =() => {
+		setOpen(true);
+	}
+
+	const handleClose = (e) => {
+		e.preventDefault();
+		if(e.target === e.currentTarget) {
+			setOpen(false);
+		}
+	}
+
+	return (
+		<StyledFooter>
+			<StyledItemLine>
+				<div>
+					<div>
+						<h3>Get to Know Us</h3>
+						<ul>
+							<li><a href="/">Careers</a></li>
+							<li><a href="/">Blog</a></li>
+							<li><a href="/">About Amazon</a></li>
+							<li><a href="/">Press Center</a></li>
+							<li><a href="/">Investor Relations</a></li>
+							<li><a href="/">Amazon Devices</a></li>
+							<li><a href="/">Amazon Tour</a></li>
+						</ul>
+					</div>
+					<div>
+						<h3>Make Money with Us</h3>
+						<ul>
+							<li><a href="/">Sell products on Amazon</a></li>
+							<li><a href="/">Sell apps on Amazon</a></li>
+							<li><a href="/">Become an Affiliate</a></li>
+							<li><a href="/">Advertise Your Products</a></li>
+							<li><a href="/">Self-Publish with Us</a></li>
+							<li><a href="/">Host an Amazon Hub</a></li>
+							<li><a href="/">See More Make Money with Us</a></li>
+						</ul>
+					</div>
+					<div>
+						<h3>Amazon Payment Products</h3>
+						<ul>
+							<li><a href="/">Amazon Rewards Visa Signature Cards</a></li>
+							<li><a href="/">Amazon.com Store Card</a></li>
+							<li><a href="/">Amazon Business Card</a></li>
+							<li><a href="/">Shop with Points</a></li>
+							<li><a href="/">Credit Card Marketplace</a></li>
+							<li><a href="/">Reload Your Balence</a></li>
+							<li><a href="/">Amazon Currency Converter</a></li>
+						</ul>
+					</div>
+					<div>
+						<h3>Let Us Help You</h3>
+						<ul>
+							<li><a href="/">Amazon and Covid-19</a></li>
+							<li><a href="/">Your Account</a></li>
+							<li><a href="/">Your Orders</a></li>
+							<li><a href="/">Shipping Rates & Polices</a></li>
+							<li><a href="/">Amazon Prime</a></li>
+							<li><a href="/">Returns & Replacements</a></li>
+							<li><a href="/">Manage Your Content and Devices</a></li>
+						</ul>
+					</div>
+				</div>
+			</StyledItemLine>
+			<StyledItemLine>
+				<a href="/">
+					<StyledLogo src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" />
+				</a>
+				<StyledDeclarative>
+					<StyledGlobeImg />
+					<span>{language}</span>
+					<StyledUpDownArrow />
+					<StyleDropDown>
+						<FlyoutArrow />
+						<StyledChoose>
+							<StyledInput 
+								id="english"
+								type="radio" 
+								value="english"
+								checked={language === 'english'}
+								onChange={changeLanguage}
+							/>
+							<StyledLabel htmlFor="english">English - EN</StyledLabel>
+						</StyledChoose>
+						<StyledDivider />
+						<StyledChoose>
+							<StyledInput 
+								id="spanish"
+								type="radio"
+								value="spanish"
+								checked={language === 'spanish'}
+								onChange={changeLanguage}
+							/>
+							<StyledLabel htmlFor="spanish">Spanish - ES</StyledLabel>
+						</StyledChoose>
+					</StyleDropDown>
+				</StyledDeclarative>
+				<StyledDeclarative onClick={handleOpen}>
+					<StyledFlag />
+					<span>United States</span>
+				</StyledDeclarative>
+			</StyledItemLine>
+			<StyledItemDescription>
+				<div>
+					<div>
+						<ul>
+							<li>
+								<a href="/">
+									<p>Amazon Music</p>
+									<small>Stream millions of songs</small>
+								</a>
+							</li>
+							<li>
+								<a href="/">
+									<p>Sell on Amazon</p>
+									<small>Start a Selling Account</small>
+								</a>
+							</li>
+							<li>
+								<a href="/">
+									<p>Amazon Web Services</p>
+									<small>Scalable Cloud Computing Service</small>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<ul>
+							<li>
+								<a href="/">
+									<p>Amazon Advertising</p>
+									<small>Find, attract, and engage customers</small>
+								</a>
+							</li>
+							<li>
+								<a href="/">
+									<p>Amazon Business</p>
+									<small>Everything For Your Business</small>
+								</a>
+							</li>
+							<li>
+								<a href="/">
+									<p>Audible</p>
+									<small>Listen to Books & Original</small>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<ul>
+							<li>
+								<a href="/">
+									<p>Amazon Drive</p>
+									<small>Cloud storage from Amazon</small>
+								</a>
+							</li>
+							<li>
+								<a href="/">
+									<p>Amazon Fresh</p>
+									<small>Groceries & More Right To Your Door</small>
+								</a>
+							</li>
+							<li>
+								<a href="/">
+									<p>Book Depository</p>
+									<small>Books With Free Delivery WorldWide</small>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<ul>
+							<li>
+								<a href="/">
+									<p>6pm</p>
+									<small>Score deals on fashion brands</small>
+								</a>
+							</li>
+							<li>
+								<a href="/">
+									<p>AmazonGlobal</p>
+									<small>Ship Orders Internationally</small>
+								</a>
+							</li>
+							<li>
+								<a href="/">
+									<p>Box Office Mojo</p>
+									<small>Find Movie Box Office Data</small>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<ul>
+							<li>
+								<a href="/">
+									<p>AbeBooks</p>
+									<small>Books, art & collectibles</small>
+								</a>
+							</li>
+							<li>
+								<a href="/">
+									<p>Home Services</p>
+									<small>Experienced Pros Happiness</small>
+								</a>
+							</li>
+							<li>
+								<a href="/">
+									<p>ComiXology</p>
+									<small>Kindle Direct Publishing</small>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<ul>
+							<li>
+								<a href="/">
+									<p>ACX</p>
+									<small>Audiobook Publishing Made Easy</small>
+								</a>
+							</li>
+							<li>
+								<a href="/">
+									<p>DPReview</p>
+									<small>Digital Photography</small>
+								</a>
+							</li>
+							<li>
+								<a href="/">
+									<p>Alexa</p>
+									<small>Actionable Analytics for the web</small>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<ul>
+							<li>
+								<a href="/">
+									<p>Amazon Rapids</p>
+									<small>Fun stories for kids on the go</small>
+								</a>
+							</li>
+							<li>
+								<a href="/">
+									<p>East Dane</p>
+									<small>Designer Men's Fashion</small>
+								</a>
+							</li>
+							<li>
+								<a href="/">
+									<p>Prime Video Direct</p>
+									<small>Video Distribution Made Easy</small>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</StyledItemDescription>
+			<StyledItemLine>
+				Conditions of Use Privacy Notice Interest-Based Ads <small>@ 1996-2020, Amazon.com, Inc. or its affiliates</small>
+			</StyledItemLine>
+			{ open === true && 
+				<StyledModal onClick={handleClose}>
+					<StyledModalContent>
+						<StyledModalWrap>
+							<StyledModalHeader>
+								<StyledModalTitle>Website (Country/Region)</StyledModalTitle>
+							</StyledModalHeader>
+							<StyledModalInner>
+								<div>
+									<p>Select your preferred country/region website:</p>
+									<ReactFlagsSelect 
+										selected={selectedCountry} 
+										defaultCountry="US"
+										onSelect={code => setSelectedCountry(code)}
+										selectedSize={14}
+									/>
+									<div>
+										<span><b>NOTE: </b></span> 
+										<span>A new country/region website selection will open in a new tab.</span>
+									</div>
+								</div>
+								<div>
+									<p>Changing country/region website</p>
+									<span>Changing the country/region you shop from may affect factors including price, shipping options and product availability.</span>
+								</div>
+							</StyledModalInner>
+							<StyledModalFooter>
+								<button onClick={this.handleClose}>Cancel</button>
+								<button>Go to website</button>
+							</StyledModalFooter>
+						</StyledModalWrap>
+					</StyledModalContent>
+				</StyledModal>
+			}
+		</StyledFooter>
+	);
+}
 
 const StyledItemLine = styled.div`
 	padding: 25px;	
@@ -314,332 +625,5 @@ const StyledItemDescription = styled(StyledItemLine)`
 		}
 	}
 `;
-
-class Footer extends Component {
-	constructor() {
-		super();
-		this.state = {
-			language: 'english',
-			open: false
-		};
-
-		this.changeLanguage = this.changeLanguage.bind(this);
-		this.handleOpen = this.handleOpen.bind(this);
-		this.handleClose = this.handleClose.bind(this);
-	}
-	
-	changeLanguage(e) {
-		this.setState({
-			language: e.currentTarget.value,
-		})
-	}
-
-	handleOpen() {
-		this.setState({
-			open: true
-		});
-	}
-
-	handleClose(event) {
-		event.preventDefault();
-		if(event.target === event.currentTarget) {
-			this.setState({
-				open: false
-			});
-		}
-	}
-
-	render() {
-		return (
-			<StyledFooter>
-				<StyledItemLine>
-					<div>
-						<div>
-							<h3>Get to Know Us</h3>
-							<ul>
-								<li><a href="/">Careers</a></li>
-								<li><a href="/">Blog</a></li>
-								<li><a href="/">About Amazon</a></li>
-								<li><a href="/">Press Center</a></li>
-								<li><a href="/">Investor Relations</a></li>
-								<li><a href="/">Amazon Devices</a></li>
-								<li><a href="/">Amazon Tour</a></li>
-							</ul>
-						</div>
-						<div>
-							<h3>Make Money with Us</h3>
-							<ul>
-								<li><a href="/">Sell products on Amazon</a></li>
-								<li><a href="/">Sell apps on Amazon</a></li>
-								<li><a href="/">Become an Affiliate</a></li>
-								<li><a href="/">Advertise Your Products</a></li>
-								<li><a href="/">Self-Publish with Us</a></li>
-								<li><a href="/">Host an Amazon Hub</a></li>
-								<li><a href="/">See More Make Money with Us</a></li>
-							</ul>
-						</div>
-						<div>
-							<h3>Amazon Payment Products</h3>
-							<ul>
-								<li><a href="/">Amazon Rewards Visa Signature Cards</a></li>
-								<li><a href="/">Amazon.com Store Card</a></li>
-								<li><a href="/">Amazon Business Card</a></li>
-								<li><a href="/">Shop with Points</a></li>
-								<li><a href="/">Credit Card Marketplace</a></li>
-								<li><a href="/">Reload Your Balence</a></li>
-								<li><a href="/">Amazon Currency Converter</a></li>
-							</ul>
-						</div>
-						<div>
-							<h3>Let Us Help You</h3>
-							<ul>
-								<li><a href="/">Amazon and Covid-19</a></li>
-								<li><a href="/">Your Account</a></li>
-								<li><a href="/">Your Orders</a></li>
-								<li><a href="/">Shipping Rates & Polices</a></li>
-								<li><a href="/">Amazon Prime</a></li>
-								<li><a href="/">Returns & Replacements</a></li>
-								<li><a href="/">Manage Your Content and Devices</a></li>
-							</ul>
-						</div>
-					</div>
-				</StyledItemLine>
-				<StyledItemLine>
-					<a href="/">
-						<StyledLogo src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" />
-					</a>
-					<StyledDeclarative>
-						<StyledGlobeImg />
-						<span>{this.state.language}</span>
-						<StyledUpDownArrow />
-						<StyleDropDown>
-							<FlyoutArrow />
-							<StyledChoose>
-								<StyledInput 
-									id="english"
-									type="radio" 
-									value="english"
-									checked={this.state.language === 'english'}
-									onChange={this.changeLanguage}
-								/>
-								<StyledLabel htmlFor="english">English - EN</StyledLabel>
-							</StyledChoose>
-							<StyledDivider />
-							<StyledChoose>
-								<StyledInput 
-									id="spanish"
-									type="radio"
-									value="spanish"
-									checked={this.state.language === 'spanish'}
-									onChange={this.changeLanguage}
-								/>
-								<StyledLabel htmlFor="spanish">Spanish - ES</StyledLabel>
-							</StyledChoose>
-						</StyleDropDown>
-					</StyledDeclarative>
-					<StyledDeclarative onClick={this.handleOpen}>
-						<StyledFlag />
-						<span>United States</span>
-					</StyledDeclarative>
-				</StyledItemLine>
-				<StyledItemDescription>
-					<div>
-						<div>
-							<ul>
-								<li>
-									<a href="/">
-										<p>Amazon Music</p>
-										<small>Stream millions of songs</small>
-									</a>
-								</li>
-								<li>
-									<a href="/">
-										<p>Sell on Amazon</p>
-										<small>Start a Selling Account</small>
-									</a>
-								</li>
-								<li>
-									<a href="/">
-										<p>Amazon Web Services</p>
-										<small>Scalable Cloud Computing Service</small>
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div>
-							<ul>
-								<li>
-									<a href="/">
-										<p>Amazon Advertising</p>
-										<small>Find, attract, and engage customers</small>
-									</a>
-								</li>
-								<li>
-									<a href="/">
-										<p>Amazon Business</p>
-										<small>Everything For Your Business</small>
-									</a>
-								</li>
-								<li>
-									<a href="/">
-										<p>Audible</p>
-										<small>Listen to Books & Original</small>
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div>
-							<ul>
-								<li>
-									<a href="/">
-										<p>Amazon Drive</p>
-										<small>Cloud storage from Amazon</small>
-									</a>
-								</li>
-								<li>
-									<a href="/">
-										<p>Amazon Fresh</p>
-										<small>Groceries & More Right To Your Door</small>
-									</a>
-								</li>
-								<li>
-									<a href="/">
-										<p>Book Depository</p>
-										<small>Books With Free Delivery WorldWide</small>
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div>
-							<ul>
-								<li>
-									<a href="/">
-										<p>6pm</p>
-										<small>Score deals on fashion brands</small>
-									</a>
-								</li>
-								<li>
-									<a href="/">
-										<p>AmazonGlobal</p>
-										<small>Ship Orders Internationally</small>
-									</a>
-								</li>
-								<li>
-									<a href="/">
-										<p>Box Office Mojo</p>
-										<small>Find Movie Box Office Data</small>
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div>
-							<ul>
-								<li>
-									<a href="/">
-										<p>AbeBooks</p>
-										<small>Books, art & collectibles</small>
-									</a>
-								</li>
-								<li>
-									<a href="/">
-										<p>Home Services</p>
-										<small>Experienced Pros Happiness</small>
-									</a>
-								</li>
-								<li>
-									<a href="/">
-										<p>ComiXology</p>
-										<small>Kindle Direct Publishing</small>
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div>
-							<ul>
-								<li>
-									<a href="/">
-										<p>ACX</p>
-										<small>Audiobook Publishing Made Easy</small>
-									</a>
-								</li>
-								<li>
-									<a href="/">
-										<p>DPReview</p>
-										<small>Digital Photography</small>
-									</a>
-								</li>
-								<li>
-									<a href="/">
-										<p>Alexa</p>
-										<small>Actionable Analytics for the web</small>
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div>
-							<ul>
-								<li>
-									<a href="/">
-										<p>Amazon Rapids</p>
-										<small>Fun stories for kids on the go</small>
-									</a>
-								</li>
-								<li>
-									<a href="/">
-										<p>East Dane</p>
-										<small>Designer Men's Fashion</small>
-									</a>
-								</li>
-								<li>
-									<a href="/">
-										<p>Prime Video Direct</p>
-										<small>Video Distribution Made Easy</small>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</StyledItemDescription>
-				<StyledItemLine>
-					Conditions of Use Privacy Notice Interest-Based Ads <small>@ 1996-2020, Amazon.com, Inc. or its affiliates</small>
-				</StyledItemLine>
-				{ this.state.open === true && 
-					<StyledModal onClick={this.handleClose}>
-						<StyledModalContent>
-							<StyledModalWrap>
-								<StyledModalHeader>
-									<StyledModalTitle>Website (Country/Region)</StyledModalTitle>
-								</StyledModalHeader>
-								<StyledModalInner>
-									<div>
-										<p>Select your preferred country/region website:</p>
-										<ReactFlagsSelect 
-											selected={this.state.selectedCountry} 
-											defaultCountry="US"
-											onSelect={code => this.setState({selectedCountry: code})}
-											selectedSize={14}
-										/>
-										<div>
-											<span><b>NOTE: </b></span> 
-											<span>A new country/region website selection will open in a new tab.</span>
-										</div>
-									</div>
-									<div>
-										<p>Changing country/region website</p>
-										<span>Changing the country/region you shop from may affect factors including price, shipping options and product availability.</span>
-									</div>
-								</StyledModalInner>
-								<StyledModalFooter>
-									<button onClick={this.handleClose}>Cancel</button>
-									<button>Go to website</button>
-								</StyledModalFooter>
-							</StyledModalWrap>
-						</StyledModalContent>
-					</StyledModal>
-				}
-			</StyledFooter>
-		);
-	}
-}
 
 export default Footer;

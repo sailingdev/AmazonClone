@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import SearchIcon from "@material-ui/icons/Search";
@@ -7,6 +7,82 @@ import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import AccountListDropDown from '../utils/AccountListDropDown.js';
 import SubHeader from './SubHeader.js';
 import SideBar from './SideBar.js';
+
+function Header() {
+	const [menuStatus, setMenuStatus] = useState('close');
+
+	const handleClick = () => {
+        switch(menuStatus) {
+            case "open":
+                setMenuStatus('close');
+                break;
+            case "close":
+				setMenuStatus('open');
+				break;
+			default:
+				setMenuStatus('close');
+                break;
+        }		
+	}
+
+	return (
+		<div>
+			<SideBar 
+				menuStatus={menuStatus}
+				handleClick={handleClick}
+			/>
+			<StyledHeader>
+				<a href="/">
+					<StyledLogo 
+						src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+					/>
+				</a>
+				<StyledLocation>
+					<LocationOnIcon fontSize="small" />
+					<StyledOption>
+						<StyledOptionLineOne>Hello</StyledOptionLineOne>
+						<StyledOptionLineTwo>
+							Select your address
+						</StyledOptionLineTwo>
+					</StyledOption>
+				</StyledLocation>
+				<StyledHeaderSearch>
+					<StyledSearchOption>
+						<option value="StyledOption">All Departments</option>
+						<option value="search-alias=todays-deals">Deals</option>
+						<option value="search-alias=audible">Audible Books & Originals</option>
+						<option value="search-alias=alexa-skills">Alexa Skills</option>
+					</StyledSearchOption>
+					<StyledSearchInput type="text" />
+					<StyledSearchIcon />
+				</StyledHeaderSearch>
+				<StyledHeaderNav>
+					<StyledOption>
+						<StyledOptionLineOne>Hello, sign in</StyledOptionLineOne>
+						<StyledOptionLineTwo>
+							Account & Lists
+							<ArrowDropDownIcon fontSize="small" />
+						</StyledOptionLineTwo>
+							<StyleDropDown>
+								<AccountListDropDown />
+							</StyleDropDown>
+					</StyledOption>
+					<StyledOption>
+						<StyledOptionLineOne>Returns</StyledOptionLineOne>
+						<StyledOptionLineTwo>& Orders</StyledOptionLineTwo>
+					</StyledOption>
+					<StyledOptionBasket>
+						<ShoppingBasketIcon />
+						<StyledBasketCount>0</StyledBasketCount>
+					</StyledOptionBasket>
+				</StyledHeaderNav>
+			</StyledHeader>
+			<SubHeader 
+				handleClick={handleClick}
+			/>
+		</div>
+	);
+}
 
 const StyledHeader = styled.div`
   	height: 60px;
@@ -161,97 +237,5 @@ const StyledBasketCount = styled(StyledOptionLineTwo)`
 	margin-left: 10px;
 	margin-right: 10px;
 `
-
-class Header extends Component {
-	constructor() {
-        super();
-        this.state = {
-            menuStatus: "close"
-        }
-
-        this.handleClick = this.handleClick.bind(this);
-    };
-    
-    handleClick() {
-        switch(this.state.menuStatus) {
-            case "open":
-                this.setState({
-                    menuStatus: "close"
-                });
-                break;
-            case "close":
-                this.setState({
-                    menuStatus: "open"
-                });
-                break;
-            default:
-                this.setState({
-                    menuStatus: "close"
-                });
-                break;
-        }
-	}
-
-	render() {
-		return (
-			<div>
-                <SideBar 
-                    menuStatus={this.state.menuStatus}
-                    handleClick={this.handleClick}
-                />
-				<StyledHeader>
-                    <a href="/">
-						<StyledLogo 
-							src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-						/>
-					</a>
-                    <StyledLocation>
-						<LocationOnIcon fontSize="small" />
-						<StyledOption>
-							<StyledOptionLineOne>Hello</StyledOptionLineOne>
-							<StyledOptionLineTwo>
-								Select your address
-							</StyledOptionLineTwo>
-						</StyledOption>
-					</StyledLocation>
-                    <StyledHeaderSearch>
-						<StyledSearchOption>
-							<option value="StyledOption">All Departments</option>
-							<option value="search-alias=todays-deals">Deals</option>
-							<option value="search-alias=audible">Audible Books & Originals</option>
-							<option value="search-alias=alexa-skills">Alexa Skills</option>
-						</StyledSearchOption>
-						<StyledSearchInput type="text" />
-						<StyledSearchIcon />
-					</StyledHeaderSearch>
-                    <StyledHeaderNav>
-						<StyledOption>
-							<StyledOptionLineOne>Hello, sign in</StyledOptionLineOne>
-							<StyledOptionLineTwo>
-								Account & Lists
-								<ArrowDropDownIcon fontSize="small" />
-							</StyledOptionLineTwo>
-								<StyleDropDown>
-									<AccountListDropDown />
-								</StyleDropDown>
-						</StyledOption>
-                        <StyledOption>
-							<StyledOptionLineOne>Returns</StyledOptionLineOne>
-							<StyledOptionLineTwo>& Orders</StyledOptionLineTwo>
-						</StyledOption>
-                        <StyledOptionBasket>
-							<ShoppingBasketIcon />
-							<StyledBasketCount>0</StyledBasketCount>
-						</StyledOptionBasket>
-					</StyledHeaderNav>
-                </StyledHeader>
-                <SubHeader 
-                    handleClick={this.handleClick}
-                />
-			</div>
-
-		);
-	}
-}
 
 export default Header;

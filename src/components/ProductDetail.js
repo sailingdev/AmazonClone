@@ -1,8 +1,108 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Gallery from 'react-amazon-gallery';
 import Responsive from 'react-responsive-decorator';
 import StarRatings from 'react-star-ratings';
+
+function ProductDetail(props) {
+    const [isMobile, setIsMobile] = useState(false);
+    const images = [
+        'https://images-na.ssl-images-amazon.com/images/I/81LaJLcduEL._AC_SX679_.jpg',
+        'https://images-na.ssl-images-amazon.com/images/I/81Y6g4qdK-L._AC_SY879_.jpg',
+        'https://images-na.ssl-images-amazon.com/images/I/61Py5DxbS4L._AC_SY879_.jpg',
+        'https://images-na.ssl-images-amazon.com/images/I/71NGyFnXgKL._AC_SY879_.jpg',
+        'https://images-na.ssl-images-amazon.com/images/I/71NGyFnXgKL._AC_SY879_.jpg'
+    ];
+
+    useEffect(() => {
+        props.media({ minWidth: 768 }, () => {
+            setIsMobile(false);
+        });
+
+        props.media({ maxWidth: 768 }, () => {
+            setIsMobile(true);
+        });
+    });
+
+    return (
+        <StyledProductDetail>
+            <StyledWrap>
+                <StyledGallery
+                    images={images}
+                    width={ isMobile ? 200 : 500 }
+                    height={ isMobile ? 300 : 500 }
+                />
+                <StyledCenter>
+                    <h1>SOUNDBOKS 2 - The Loudest Wireless Bluetooth Speaker</h1>
+                    <StyledRating>
+                        <StarRatings 
+                            rating={4.5}
+                            starRatedColor="orange"
+                            numberOfStars={5}
+                            name='rating'
+                            starSpacing="1px"
+                            starDimension="20px"
+                        />
+                        <span>734 ratings</span>
+                        { !isMobile &&
+                            <>
+                                <span> | </span>
+                                <span>206 answered questions</span>
+                            </>
+                        }
+                    </StyledRating>
+                    <StyledPrice>
+                        <span>Price: </span>
+                        <StyledCurrency>$699.00</StyledCurrency>
+                        <StyledShipping>& FREE Shipping Details </StyledShipping>
+                        <StyledReturn> & FREE Returns</StyledReturn>
+                    </StyledPrice>
+                    <StyledFeature>
+                        <div>
+                            <span>Brand</span>
+                            <span>SOUNDBOXS</span>
+                        </div>
+                        <div>
+                            <span>Color</span>
+                            <span>Black</span>
+                        </div>
+                        <div>
+                            <span>Type</span>
+                            <span>Outdoor</span>
+                        </div>
+                        <div>
+                            <span>Item Weight</span>
+                            <span>16. 25 kg</span>
+                        </div>
+                    </StyledFeature>
+                    <StyledDescription>
+                        <h3>About this item</h3>
+                        <ul>
+                            <li>Loud Quality Sound – 122 dB of volume, crisp treble and huge bass</li>
+                            <li>Bluetooth Ready – Connect devices via Bluetooth or ⅛” AUX input</li>
+                            <li>Lasts 40 Hours - Swappable battery pack that lasts an average of 40 hours</li>
+                            <li>Durable Design – Water resistant, splash proof, dirt resistant and built to last</li>
+                            <li>Portable and Fully Wireless - Take the 33 lbs loudspeaker anywhere, set it up in seconds without any chords</li>
+                        </ul>
+                    </StyledDescription>
+                </StyledCenter>
+                <StyledRight>
+                    <StyledCurrency>$699.00</StyledCurrency>
+                    <StyledShipping>& FREE Shipping. Details</StyledShipping>
+                    <StyledReturn>& FREE Returns</StyledReturn>
+                    <StyledShipping>Arrives: Moday, Jan 18 Details</StyledShipping>
+                    <span>In Stock.</span>
+                    <Qty>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </Qty>
+                </StyledRight>
+            </StyledWrap>
+        </StyledProductDetail>
+    );
+}
 
 const StyledProductDetail = styled.div`
     background: white;
@@ -150,117 +250,5 @@ const Qty = styled.select`
     padding: 3px;
     outerline: none;
 `;
-
-class ProductDetail extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            isMobile: false,
-            images: [
-                'https://images-na.ssl-images-amazon.com/images/I/81LaJLcduEL._AC_SX679_.jpg',
-                'https://images-na.ssl-images-amazon.com/images/I/81Y6g4qdK-L._AC_SY879_.jpg',
-                'https://images-na.ssl-images-amazon.com/images/I/61Py5DxbS4L._AC_SY879_.jpg',
-                'https://images-na.ssl-images-amazon.com/images/I/71NGyFnXgKL._AC_SY879_.jpg',
-                'https://images-na.ssl-images-amazon.com/images/I/71NGyFnXgKL._AC_SY879_.jpg'
-            ]
-        };
-    }
-    
-    componentDidMount() {
-        this.props.media({ minWidth: 768 }, () => {
-          this.setState({
-            isMobile: false
-          });
-        });
-    this.props.media({ maxWidth: 768 }, () => {
-          this.setState({
-            isMobile: true
-          });
-        });
-      }
-
-	render() {
-		return (
-			<StyledProductDetail>
-                <StyledWrap>
-                    <StyledGallery
-                        images={this.state.images}
-                        width={ this.state.isMobile ? 200 : 500 }
-                        height={ this.state.isMobile ? 300 : 500 }
-                    />
-                    <StyledCenter>
-                        <h1>SOUNDBOKS 2 - The Loudest Wireless Bluetooth Speaker</h1>
-                        <StyledRating>
-                            <StarRatings 
-                                rating={4.5}
-                                starRatedColor="orange"
-                                numberOfStars={5}
-                                name='rating'
-                                starSpacing="1px"
-                                starDimension="20px"
-                            />
-                            <span>734 ratings</span>
-                            { !this.state.isMobile &&
-                                <>
-                                    <span> | </span>
-                                    <span>206 answered questions</span>
-                                </>
-                            }
-                        </StyledRating>
-                        <StyledPrice>
-                            <span>Price: </span>
-                            <StyledCurrency>$699.00</StyledCurrency>
-                            <StyledShipping>& FREE Shipping Details </StyledShipping>
-                            <StyledReturn> & FREE Returns</StyledReturn>
-                        </StyledPrice>
-                        <StyledFeature>
-                            <div>
-                                <span>Brand</span>
-                                <span>SOUNDBOXS</span>
-                            </div>
-                            <div>
-                                <span>Color</span>
-                                <span>Black</span>
-                            </div>
-                            <div>
-                                <span>Type</span>
-                                <span>Outdoor</span>
-                            </div>
-                            <div>
-                                <span>Item Weight</span>
-                                <span>16. 25 kg</span>
-                            </div>
-                        </StyledFeature>
-                        <StyledDescription>
-                            <h3>About this item</h3>
-                            <ul>
-                                <li>Loud Quality Sound – 122 dB of volume, crisp treble and huge bass</li>
-                                <li>Bluetooth Ready – Connect devices via Bluetooth or ⅛” AUX input</li>
-                                <li>Lasts 40 Hours - Swappable battery pack that lasts an average of 40 hours</li>
-                                <li>Durable Design – Water resistant, splash proof, dirt resistant and built to last</li>
-                                <li>Portable and Fully Wireless - Take the 33 lbs loudspeaker anywhere, set it up in seconds without any chords</li>
-                            </ul>
-                        </StyledDescription>
-                    </StyledCenter>
-                    <StyledRight>
-                        <StyledCurrency>$699.00</StyledCurrency>
-                        <StyledShipping>& FREE Shipping. Details</StyledShipping>
-                        <StyledReturn>& FREE Returns</StyledReturn>
-                        <StyledShipping>Arrives: Moday, Jan 18 Details</StyledShipping>
-                        <span>In Stock.</span>
-                        <Qty>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                        </Qty>
-                    </StyledRight>
-                </StyledWrap>
-			</StyledProductDetail>
-
-		);
-	}
-}
 
 export default Responsive(ProductDetail);
